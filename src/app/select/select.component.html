@@ -1,40 +1,27 @@
-<div class="dropdown">
+<input
+  #origin
+  [formControl]="searchControl"
+  [placeholder]="placeholder"
+  (focus)="open(dropdown, origin); onTouched()"
+/>
 
-  <button class="select-trigger"
-          (click)="open(dropdown, origin)" #origin>
-
-    <ng-template [ngIf]="!isOpen" [ngIfElse]="searchTpl">
-      {{ label }}
-    </ng-template>
-
-    <ng-template #searchTpl>
-      <input [formControl]="searchControl"
-             placeholder="Search.." autofocus
-             (click)="$event.stopPropagation()">
-    </ng-template>
-
-  </button>
-
-  <ng-template #dropdown>
-
-    <div class="select-menu">
-
-      <cdk-virtual-scroll-viewport itemSize="32" class="select-menu-inner"
-                                   [style.height.px]="visibleOptions * 32">
-
-        <div *ngIf="!options.length" class="no-results-item">No results found...</div>
-
-        <div *cdkVirtualFor="let option of options" class="select-item"
-             [class.active]="isActive(option)"
-             (click)="select(option)">
-          <ng-template [ngIf]="!optionTpl">{{option.label}}</ng-template>
-          <ng-template *ngTemplateOutlet="optionTpl; context: {$implicit: option}"></ng-template>
-        </div>
-      </cdk-virtual-scroll-viewport>
-
+<ng-template #dropdown>
+  <cdk-virtual-scroll-viewport
+    id="dropdown"
+    itemSize="32"
+    [style.height.px]="visibleOptions * 32"
+  >
+    <div *ngIf="options.length === 0" class="option">
+      No results found...
     </div>
 
-  </ng-template>
-
-
-</div>
+    <div
+      *cdkVirtualFor="let option of options"
+      class="option"
+      [ngClass]="{ active: isActive(option) }"
+      (click)="select(option)"
+    >
+      {{ option.value }}
+    </div>
+  </cdk-virtual-scroll-viewport>
+</ng-template>

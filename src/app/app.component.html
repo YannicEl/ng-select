@@ -1,16 +1,12 @@
-<div class="container">
+<div>
+  <app-select
+    [options]="options"
+    placeholder="test placeholder"
+    [formControl]="select"
+  ></app-select>
 
-<!--  <div>-->
-<!--    <app-select [model]="3" [options]="items" [optionTpl]="optionTpl"></app-select>-->
-<!--  </div>-->
-
-  <div style="margin-top: 200px;">
-    <app-select [options]="items" (selectChange)="change($event)"></app-select>
-  </div>
-
-  <ng-template #optionTpl let-option>
-    B {{ option.label }}
-  </ng-template>
+  <pre>
+  {{ select.value | json }}
+</pre
+  >
 </div>
-
-

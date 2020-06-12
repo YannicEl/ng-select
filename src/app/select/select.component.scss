@@ -1,43 +1,16 @@
-.select-menu {
+input {
+  width: 100%;
+}
+
+#dropdown {
+  width: 100%;
   color: #212529;
-  text-align: left;
-  list-style: none;
-  overflow-x: hidden;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, .15);
-}
-
-.select-trigger {
-  width: 180px;
-  border: 1px solid lightgray;
-  text-align: left;
-  padding: 7px;
-  font-size: 14px;
-  color: #212529;
-  cursor: pointer;
-  &:focus {
-    outline: none;
-  }
-}
-
-.select-menu-inner {
-  width: 180px;
+  border: 1px solid #bdbdbd;
   max-height: 128px;
 }
 
-
-input {
-  border: none;
-  width: 100%;
-  font-size: 14px;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-
-.select-item {
+.option {
   height: 32px;
   display: flex;
   align-items: center;
@@ -53,12 +26,4 @@ input {
     background-color: deeppink;
     color: #fff;
   }
-}
-
-.no-results-item {
-  height: 32px;
-  display: flex;
-  align-items: center;
-  padding: 0 7px;
-  font-size: 14px;
 }

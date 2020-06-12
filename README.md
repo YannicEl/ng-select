@@ -1,6 +1,9 @@
-# AngularDropdown
+# NgSelect
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+Fork of https://github.com/NetanelBasal/ng-select
+Made improvements, added angular form integration and updated versions.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
 
